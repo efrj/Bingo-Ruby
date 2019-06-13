@@ -1,0 +1,14 @@
+<h2>All games</h2>
+
+<% if games.any? %>
+  <div id="games">
+    <% games.each do |game| %>
+      <div class="game">
+        <h2><%= game.title %></h2>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="placeholder">There are no games yet.</p>
+<% end %>
+<a href="/games/new">New game</a>
