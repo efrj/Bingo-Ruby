@@ -12,6 +12,6 @@ end
 
 def set_max_winners(value)
   initialize_settings_files
-  value = [1, [value.to_i, 20].min].max  # Garantir que o valor esteja entre 1 e 20
+  value = [1, [value.to_i, 20].min].max
   File.write(MAX_WINNERS_FILE, value.to_s)
 end
