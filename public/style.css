@@ -1,0 +1,565 @@
+/* Modern Luxury Bingo Theme */
+
+/* Base Styles */
+body {
+    background-color: #0f0f1a;
+    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+    color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    background-color: rgba(20, 20, 35, 0.92);
+    border-radius: 12px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    border: 1px solid rgba(120, 120, 150, 0.3);
+}
+
+/* Header Styling */
+.vegas-title-container {
+    position: relative;
+    padding: 15px 0 25px 0;
+    margin-bottom: 35px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(100, 100, 255, 0.2);
+}
+
+.luxury-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.wealth-image {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+    border-radius: 5px;
+}
+
+.wealth-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(110%) contrast(110%);
+    transition: transform 0.5s;
+}
+
+.wealth-image img:hover {
+    transform: scale(1.05);
+}
+
+.wealth-image:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(10,10,30,0.1), rgba(10,10,30,0.4));
+    z-index: 1;
+}
+
+.title-area {
+    flex: 1;
+    padding: 0 20px;
+    position: relative;
+}
+
+.vegas-title {
+    font-size: 52px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.vegas-dollar-sign {
+    color: #4facfe;
+    text-shadow: 0 0 15px rgba(79, 172, 254, 0.8);
+    vertical-align: middle;
+    font-size: 46px;
+    animation: neon-pulse 3s infinite alternate;
+}
+
+.vegas-text {
+    background: linear-gradient(to bottom, #ffffff 10%, #4facfe 50%, #00f2fe 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+    font-weight: 900;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.vegas-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #c8d8e4;
+    margin-top: 8px;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+    text-transform: uppercase;
+    animation: fade-pulse 4s infinite alternate;
+}
+
+.gold-bar {
+    height: 5px;
+    background: linear-gradient(to right, #4facfe, #00f2fe, #4facfe);
+    position: relative;
+    margin-top: 15px;
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.7);
+}
+
+.vegas-lights {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: radial-gradient(circle at 20% 30%, rgba(79, 172, 254, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0, 242, 254, 0.1) 0%, transparent 40%);
+}
+
+/* Animations */
+@keyframes neon-pulse {
+    0% { text-shadow: 0 0 5px rgba(79, 172, 254, 0.8); }
+    50% { text-shadow: 0 0 15px rgba(79, 172, 254, 1), 0 0 25px rgba(79, 172, 254, 0.5); }
+    100% { text-shadow: 0 0 5px rgba(79, 172, 254, 0.8); }
+}
+
+@keyframes fade-pulse {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; color: #4facfe; }
+}
+
+/* Bingo Cards */
+.bingo-card {
+    margin-bottom: 25px;
+    border: 2px solid #4facfe;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #1a1a2e;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(79, 172, 254, 0.2);
+    transition: all 0.3s ease;
+}
+
+.bingo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(79, 172, 254, 0.3);
+}
+
+.bingo-card table {
+    width: 100%;
+    margin-bottom: 0;
+    background-color: #16213e;
+}
+
+.bingo-card th {
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    color: #0a0a1a;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 5px;
+    border: none;
+    font-size: 16px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.bingo-card td {
+    text-align: center;
+    font-weight: bold;
+    padding: 12px 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid #2d3a4f;
+    color: #e0e0e0;
+    position: relative;
+    background-color: #1a1a2e;
+}
+
+.bingo-card td:hover {
+    background-color: #242450;
+}
+
+.bingo-card td.marked {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #0a0a1a;
+    font-weight: bold;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.bingo-card td.marked:after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+.bingo-card td.free-space {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    color: #0a0a1a;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* Player Info */
+.player-info {
+    padding: 10px 12px;
+    background: linear-gradient(to right, #16213e, #1a1a2e);
+    border-bottom: 2px solid rgba(79, 172, 254, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.player-info i {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #4facfe;
+    text-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+.player-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: #e0e0e0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Drawn Numbers */
+.drawn-numbers {
+    margin-bottom: 20px;
+}
+
+.number-ball {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #0a0a1a;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px 8px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 0 8px rgba(79, 172, 254, 0.3);
+    position: relative;
+    transition: all 0.2s;
+    font-size: 15px;
+}
+
+.number-ball:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 12px rgba(79, 172, 254, 0.4);
+}
+
+.number-ball:before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+}
+
+#winners-list {
+    max-height: 490px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #4facfe #1a1a2e;
+}
+
+#winners-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#winners-list::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+#winners-list::-webkit-scrollbar-thumb {
+    background-color: #4facfe;
+    border-radius: 10px;
+}
+
+/* Winner Badge */
+.winner-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #0a0a1a;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border-radius: 8px;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.8);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    animation: winner-glow 1.5s infinite;
+}
+
+@keyframes winner-glow {
+    0% {
+        transform: translate(-50%, -50%) rotate(-25deg) scale(1);
+        box-shadow: 0 0 20px rgba(79, 172, 254, 0.7);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(-25deg) scale(1.05);
+        box-shadow: 0 0 30px rgba(79, 172, 254, 1);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-25deg) scale(1);
+        box-shadow: 0 0 20px rgba(79, 172, 254, 0.7);
+    }
+}
+
+/* Control Cards */
+.card {
+    background-color: #1a1a2e;
+    border: 1px solid #4facfe;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #0a0a1a;
+    font-weight: 600;
+    border-bottom: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    transition: all 0.3s;
+    margin-right: 10px;
+    color: #0a0a1a;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-danger {
+    background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+    border: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    transition: all 0.3s;
+    color: #0a0a1a;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(to right, #ff8e8e, #ff6b6b);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Winners List */
+.list-group-item {
+    background-color: #1a1a2e;
+    border-color: #2d3a4f;
+    color: #e0e0e0;
+    transition: all 0.3s;
+    padding: 12px 15px;
+}
+
+.list-group-item:hover {
+    background-color: #242450;
+    transform: translateX(5px);
+}
+
+.list-group-item i {
+    margin-right: 10px;
+    color: #4facfe;
+    animation: icon-pulse 2s infinite;
+}
+
+@keyframes icon-pulse {
+    0% { text-shadow: 0 0 5px rgba(79, 172, 254, 0.5); }
+    50% { text-shadow: 0 0 15px rgba(79, 172, 254, 1); }
+    100% { text-shadow: 0 0 5px rgba(79, 172, 254, 0.5); }
+}
+
+/* Winner Modal */
+#winnerModal .modal-content {
+    background-color: #16213e;
+    border: 2px solid #4facfe;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(79, 172, 254, 0.5);
+}
+
+#winnerModal .modal-header {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: #0a0a1a;
+    border-bottom: none;
+    text-align: center;
+}
+
+#winnerModal .modal-title {
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+#winnerModal .modal-body {
+    background-color: #1a1a2e;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-geometric.png');
+    padding: 30px;
+    color: #e0e0e0;
+}
+
+#winnerModal .fas.fa-trophy {
+    color: #4facfe;
+    animation: trophy-pulse 3s infinite;
+}
+
+@keyframes trophy-pulse {
+    0% { transform: scale(1); text-shadow: 0 0 10px rgba(79, 172, 254, 0.7); }
+    50% { transform: scale(1.1); text-shadow: 0 0 20px rgba(79, 172, 254, 1), 0 0 30px rgba(0, 242, 254, 0.6); }
+    100% { transform: scale(1); text-shadow: 0 0 10px rgba(79, 172, 254, 0.7); }
+}
+
+#winnerModal .modal-footer {
+    border-top: none;
+    background-color: #16213e;
+}
+
+#winnerModal .btn-secondary {
+    background: linear-gradient(to right, #718093, #8395a7);
+    border: none;
+    font-weight: 600;
+    padding: 8px 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    color: #0a0a1a;
+}
+
+#winnerModal .btn-secondary:hover {
+    background: linear-gradient(to right, #8395a7, #718093);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .luxury-header {
+        flex-direction: column;
+    }
+    
+    .wealth-image {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    
+    .vegas-title {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+    
+    .vegas-subtitle {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+    
+    .title-area {
+        padding: 10px 15px;
+    }
+    
+    .number-ball {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+    
+    .winner-badge {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+    
+    .bingo-card td {
+        padding: 8px 3px;
+        font-size: 16px;
+    }
+}
+
+/* Additional flourishes */
+.bingo-controls {
+    position: relative;
+}
+
+.bingo-controls::before,
+.bingo-controls::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.bingo-controls::before {
+    top: -15px;
+    left: -15px;
+}
+
+.bingo-controls::after {
+    bottom: -15px;
+    right: -15px;
+}
